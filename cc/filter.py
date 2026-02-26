@@ -26,16 +26,18 @@ def filter_offers(df, offer_type=None, country=None, tech_stack=None):
 
 def to_markdown(df):
 	md = "# Filtered Offers\n\n"
-	for _, row in df.iterrows():
-		md += f"## {row['title']}\n"
-		md += f"**Description:** {row['little_description']}\n\n"
-		md += f"**Details:** {row['big_description']}\n\n"
+	for idx, row in df.iterrows():
+		md += f"---\n\n"
+		md += f"## Offer {idx+1}: {row['title']}\n\n"
+		md += f"**Short Description:**\n{row['little_description']}\n\n"
+		md += f"**Full Details:**\n{row['big_description']}\n\n"
 		md += f"**Salary:** {row['salary']}\n"
-		md += f"**Type:** {row['contract_type']}\n"
+		md += f"**Contract Type:** {row['contract_type']}\n"
 		md += f"**Location:** {row['full_address']}\n"
 		md += f"**Duration:** {row['min_duration']} - {row['max_duration']} months\n"
-		md += f"**Contact:** {row['email']}\n\n"
-		md += "---\n\n"
+		md += f"**Contact Email:** {row['email']}\n"
+		md += f"**Offer Link:** {row.get('slug', '')}\n\n"
+	md += "---\n"
 	return md
 
 def main():
