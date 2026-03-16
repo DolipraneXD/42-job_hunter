@@ -1,14 +1,4 @@
 #!/usr/bin/env python3
-"""
-Scout Scanner
-==================
-Author: AccioMo
-Date: 11-08-2025
-
-This script fetches job offers from the 42 API, saves them as JSON and CSV files,
-and manages authentication using credentials from a .env file.
-"""
-
 import requests
 import dotenv
 import json
@@ -78,6 +68,7 @@ def write_to_csv(log_path, data):
 		
 
 def get_jobs(access_token):
+	os.makedirs("data", exist_ok=True)
 	total_items = []
 	for i in range(1, 20):
 		response = requests.get(f"https://api.intra.42.fr/v2/offers?page[size]=100&page={i}", 
@@ -105,6 +96,8 @@ def get_jobs(access_token):
 		if filename.startswith("part-") and filename.endswith(".json"):
 			os.remove(os.path.join("data", filename))
 	##########################
+
+os.makedirs("data", exist_ok=True)
 
 if __name__ == "__main__":
 	try:
