@@ -59,5 +59,5 @@ python3 cc/filter.py cc/data/offers_2026-02-26-15-26-56.csv --type stage --count
 
 The filtered results are saved as `offer.md` in the same directory as the input file.
 
-## Author
+## Authors
 DolipraneXD acciomo
