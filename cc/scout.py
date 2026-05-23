@@ -8,8 +8,8 @@ import os
 import csv
 import pandas
 
-CLIENT_ID = dotenv.get_key('.env', '42_CLIENT_ID')
-CLIENT_SECRET = dotenv.get_key('.env', '42_CLIENT_SECRET')
+CLIENT_ID = dotenv.get_key('.env', 'FT_CLIENT_ID')
+CLIENT_SECRET = dotenv.get_key('.env', 'FT_CLIENT_SECRET')
 
 def get_current_date():
 	start_date = datetime.datetime.now()

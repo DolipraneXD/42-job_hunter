@@ -1,5 +1,6 @@
-.env
 *.json
 *.csv
 *.md
 *.log
+venv/
+.env*

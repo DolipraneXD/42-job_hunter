@@ -27,8 +27,8 @@ and manages authentication using credentials from a .env file.
 ## Environment Variables
 Create a `.env` file in the project root with the following variables:
 ```
-42_CLIENT_ID=your_client_id
-42_CLIENT_SECRET=your_client_secret
+FT_CLIENT_ID=your_client_id
+FT_CLIENT_SECRET=your_client_secret
 ```
 
 ## Usage
